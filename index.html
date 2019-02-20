@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math model</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'
+        async></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Full coverage test</h3>
+
+        <p>Risks are grouped in a set \(Risk=\left \{ x_{1},x_{2},...,x_{n} \right \}\)</p>
+        <p>Each risk has its own weights \(Weight=\left \{ w_{1},w_{2},...,w_{n} \right \}\)</p>
+        <p>
+
+            \(
+            x_i \mapsto \left\{\begin{matrix}
+            x_i = 0 & if \ inclusion = true & \\
+            x_i = 1 & if \ inclusion = false &
+            \end{matrix}\right.
+            \)
+
+            The inclusion criteria is manage according to standard protocol based on each risk factor, this is the
+            threshold
+        </p>
+
+        <table>
+            <tr>
+                <th>Risk Factor</th>
+                <th>threshold</th>
+            </tr>
+            <tr>
+                <td>Artirial Fibrilation ( \( CHA_2 DS_2 -VAS_c \) )</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Venous Tromboembolism (Padua score)</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Valve</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+
+        <button class="btn">Calculate</button>
+    </div>
+
+</body>
+
+</html>
