@@ -1,60 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Math model</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+            async
+        ></script>
+        <style>
+            .board-inclusion {
+                background-color: black;
+                min-width: 100%;
+                min-height: 50px;
+                margin: 10px;
+                color: white;
+                padding: 10px;
+            }
+        </style>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Math model</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'
-        async></script>
-</head>
+    <body>
+        <div class="container">
+            <h3>Inclusion Model</h3>
 
-<body>
+            <p>
+                Risks are grouped in a set \(Risk=\left \{ x_{1},x_{2},...,x_{n}
+                \right \}\)
+            </p>
+            <p>
+                Each risk has its own weights \(Weight=\left \{
+                w_{1},w_{2},...,w_{n} \right \}\)
+            </p>
+            <p>
+                \( x_i \mapsto \left\{\begin{matrix} x_i = 0 & if \ inclusion =
+                true & \\ x_i = 1 & if \ inclusion = false & \end{matrix}\right.
+                \) The inclusion criteria is manage according to standard
+                protocol based on each risk factor,this is known as the threshold score
+            </p>
 
-    <div class="container">
-        <h3>Full coverage test</h3>
+            <table>
+                <tr>
+                    <th>Risk Factor</th>
+                    <th>Threshold Score</th>
+                </tr>
+                <tr>
+                    <td>Artirial Fibrilation ( \( CHA_2 DS_2 -VAS_c \) )</td>
+                    <td>1 out of 9</td>
+                </tr>
+                <tr>
+                    <td>Venous Tromboembolism (Padua score)</td>
+                    <td>4 out of 20</td>
+                </tr>
+                <tr>
+                    <td>Valve</td>
+                    <td>1 out of 2</td>
+                </tr>
+            </table>
 
-        <p>Risks are grouped in a set \(Risk=\left \{ x_{1},x_{2},...,x_{n} \right \}\)</p>
-        <p>Each risk has its own weights \(Weight=\left \{ w_{1},w_{2},...,w_{n} \right \}\)</p>
-        <p>
+            <div class="board-inclusion" id="board-inclusion">
+                <small>- Risks factors</small>
+                <div id="risk-factor">
+                    
+                </div>
+                <small>- Posible Combinations</small>
+                <div id="combinations"> 
+                    
+                </div>
+            </div>
 
-            \(
-            x_i \mapsto \left\{\begin{matrix}
-            x_i = 0 & if \ inclusion = true & \\
-            x_i = 1 & if \ inclusion = false &
-            \end{matrix}\right.
-            \)
-
-            The inclusion criteria is manage according to standard protocol based on each risk factor, this is the
-            threshold
-        </p>
-
-        <table>
-            <tr>
-                <th>Risk Factor</th>
-                <th>threshold</th>
-            </tr>
-            <tr>
-                <td>Artirial Fibrilation ( \( CHA_2 DS_2 -VAS_c \) )</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>Venous Tromboembolism (Padua score)</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>Valve</td>
-                <td>1</td>
-            </tr>
-        </table>
+            <button class="btn" id="btn-inclusion">Calculate</button>
 
 
-        <button class="btn">Calculate</button>
-    </div>
 
-</body>
+<h3>Stratification Model</h3>
 
+            <p>
+                Risks are grouped in a set \(Risk=\left \{ x_{1},x_{2},...,x_{n}
+                \right \}\)
+            </p>
+            <p>
+                Each risk has its own weights \(Weight=\left \{
+                w_{1},w_{2},...,w_{n} \right \}\)
+            </p>
+            <p>
+                \( x_i \mapsto \left\{\begin{matrix} x_i = 0 & if \ inclusion =
+                true & \\ x_i = 1 & if \ inclusion = false & \end{matrix}\right.
+                \) The inclusion criteria is manage according to standard
+                protocol based on each risk factor,this is known as the threshold score
+            </p>
+
+            <table>
+                <tr>
+                    <th>Risk Factor</th>
+                    <th>Threshold Score</th>
+                </tr>
+                <tr>
+                    <td>Artirial Fibrilation ( \( CHA_2 DS_2 -VAS_c \) )</td>
+                    <td>1 out of 9</td>
+                </tr>
+                <tr>
+                    <td>Venous Tromboembolism (Padua score)</td>
+                    <td>4 out of 20</td>
+                </tr>
+                <tr>
+                    <td>Valve</td>
+                    <td>1 out of 2</td>
+                </tr>
+            </table>
+
+            <div class="board-stratification" id="board-stratification">
+                <small>- Risks factors</small>
+                <div id="risk-factor">
+                    
+                </div>
+                <small>- Posible Combinations</small>
+                <div id="combinations"> 
+                    
+                </div>
+            </div>
+
+            <button class="btn" id="btn-stratification">Calculate</button>
+
+
+        </div>
+
+
+
+        <script>
+
+//Code Abbreviations
+            function $(s) { return document.getElementById(s) };
+
+//Math Formulas
+
+//Factorial
+var f = [];
+factorial=(n)=>{
+  if (n == 0 || n == 1)
+    return 1;
+  if (f[n] > 0)
+    return f[n];
+  return f[n] = factorial(n-1) * n;
+} ;
+
+
+// Risk factors 
+            var cha2d2svasc = `
+<p>
+CHA_2 DS_2 -VAS_c <b>calculations</b>  
+<ol>         
+<li>Age 65-74 +1 
+<li>Age ≥75 +2 </li>
+<li>Gender +1 </li>
+<li>CHF history +1 </li>
+<li>Hypertension history +1 </li>
+<li>Stroke / TIA / Thromboembolism history +2 </li>
+<li>Vascular disease history +1 </li>
+<li>Diabetes history +1 </li>
+</ol>
+
+</p>
+`;
+var cha2d2svasc_combinations = "CHA_2 DS_2 -VAS_c: " +(factorial(8)) +"</br>";
+
+            var padua = `
+<p>
+Padua <b>calculations</b> </br>
+<ol>
+<li>Active cancer +3 </li>
+<li>Previous VTE +3 </li>
+<li>Excluding superficial vein thrombosis +3 </li>
+<li>Reduced mobility +3 </li>
+<li>Already known thrombophilic condition +3 </li>
+<li>Recent (≤1 month trauma and/or surgery) +2 </li>
+<li>Elderly age (≥70 years) +1 </li>
+<li>Heart and/or respiratory failure +1 </li>
+<li>Acute MI and/or ischemic stroke +1 </li>
+<li>Acute infection and/or rheumatologic disorder +1 </li>
+<li>Obesity (BMI ≥30) +1 </li>
+<li>Ongoing hormonal treatment +1</li>
+</ol>
+</p>
+`;
+var padua_combinations = "Padua: "+ (factorial(12)) +" </br>";
+
+            var valve = `
+           <p>
+            Heart valves <b>calculations</b>
+Mechanical valve +1 </br>
+Biological valve +1 </br>
+           </p>
+`;
+var valve_combinations = "Heart Valve: "+(factorial(2));
+
+//Functions
+
+            $("btn-inclusion").onclick = () => {
+               $("risk-factor").innerHTML= cha2d2svasc+padua+valve;
+               $("combinations").innerHTML= cha2d2svasc_combinations+padua_combinations+valve_combinations;
+
+            };
+
+        </script>
+    </body>
 </html>
